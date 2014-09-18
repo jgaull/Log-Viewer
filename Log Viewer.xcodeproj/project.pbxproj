@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC49DC9119CB81A2004E07EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9019CB81A2004E07EC /* Foundation.framework */; };
+		FC49DC9319CB81A2004E07EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */; };
+		FC49DC9519CB81A2004E07EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9419CB81A2004E07EC /* UIKit.framework */; };
+		FC49DC9B19CB81A2004E07EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC49DC9919CB81A2004E07EC /* InfoPlist.strings */; };
+		FC49DC9D19CB81A2004E07EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DC9C19CB81A2004E07EC /* main.m */; };
+		FC49DCA119CB81A2004E07EC /* LVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCA019CB81A2004E07EC /* LVAppDelegate.m */; };
+		FC49DCA419CB81A2004E07EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC49DCA219CB81A2004E07EC /* Main.storyboard */; };
+		FC49DCA719CB81A2004E07EC /* LVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCA619CB81A2004E07EC /* LVViewController.m */; };
+		FC49DCA919CB81A2004E07EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC49DCA819CB81A2004E07EC /* Images.xcassets */; };
+		FC49DCB019CB81A2004E07EC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCAF19CB81A2004E07EC /* XCTest.framework */; };
+		FC49DCB119CB81A2004E07EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9019CB81A2004E07EC /* Foundation.framework */; };
+		FC49DCB219CB81A2004E07EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9419CB81A2004E07EC /* UIKit.framework */; };
+		FC49DCBA19CB81A2004E07EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC49DCB819CB81A2004E07EC /* InfoPlist.strings */; };
+		FC49DCBC19CB81A2004E07EC /* Log_ViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCBB19CB81A2004E07EC /* Log_ViewerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC49DCB319CB81A2004E07EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC49DC8519CB81A1004E07EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC49DC8C19CB81A1004E07EC;
+			remoteInfo = "Log Viewer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC49DC8D19CB81A2004E07EC /* Log Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Log Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC49DC9019CB81A2004E07EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC49DC9419CB81A2004E07EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC49DC9819CB81A2004E07EC /* Log Viewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Log Viewer-Info.plist"; sourceTree = "<group>"; };
+		FC49DC9A19CB81A2004E07EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC49DC9C19CB81A2004E07EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC49DC9E19CB81A2004E07EC /* Log Viewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Log Viewer-Prefix.pch"; sourceTree = "<group>"; };
+		FC49DC9F19CB81A2004E07EC /* LVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAppDelegate.h; sourceTree = "<group>"; };
+		FC49DCA019CB81A2004E07EC /* LVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVAppDelegate.m; sourceTree = "<group>"; };
+		FC49DCA319CB81A2004E07EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC49DCA519CB81A2004E07EC /* LVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVViewController.h; sourceTree = "<group>"; };
+		FC49DCA619CB81A2004E07EC /* LVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVViewController.m; sourceTree = "<group>"; };
+		FC49DCA819CB81A2004E07EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FC49DCAE19CB81A2004E07EC /* Log ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Log ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC49DCAF19CB81A2004E07EC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FC49DCB719CB81A2004E07EC /* Log ViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Log ViewerTests-Info.plist"; sourceTree = "<group>"; };
+		FC49DCB919CB81A2004E07EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FC49DCBB19CB81A2004E07EC /* Log_ViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Log_ViewerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC49DC8A19CB81A1004E07EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DC9319CB81A2004E07EC /* CoreGraphics.framework in Frameworks */,
+				FC49DC9519CB81A2004E07EC /* UIKit.framework in Frameworks */,
+				FC49DC9119CB81A2004E07EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC49DCAB19CB81A2004E07EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DCB019CB81A2004E07EC /* XCTest.framework in Frameworks */,
+				FC49DCB219CB81A2004E07EC /* UIKit.framework in Frameworks */,
+				FC49DCB119CB81A2004E07EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC49DC8419CB81A1004E07EC = {
+			isa = PBXGroup;
+			children = (
+				FC49DC9619CB81A2004E07EC /* Log Viewer */,
+				FC49DCB519CB81A2004E07EC /* Log ViewerTests */,
+				FC49DC8F19CB81A2004E07EC /* Frameworks */,
+				FC49DC8E19CB81A2004E07EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC49DC8E19CB81A2004E07EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DC8D19CB81A2004E07EC /* Log Viewer.app */,
+				FC49DCAE19CB81A2004E07EC /* Log ViewerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC49DC8F19CB81A2004E07EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DC9019CB81A2004E07EC /* Foundation.framework */,
+				FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */,
+				FC49DC9419CB81A2004E07EC /* UIKit.framework */,
+				FC49DCAF19CB81A2004E07EC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC49DC9619CB81A2004E07EC /* Log Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DC9F19CB81A2004E07EC /* LVAppDelegate.h */,
+				FC49DCA019CB81A2004E07EC /* LVAppDelegate.m */,
+				FC49DCA219CB81A2004E07EC /* Main.storyboard */,
+				FC49DCA519CB81A2004E07EC /* LVViewController.h */,
+				FC49DCA619CB81A2004E07EC /* LVViewController.m */,
+				FC49DCA819CB81A2004E07EC /* Images.xcassets */,
+				FC49DC9719CB81A2004E07EC /* Supporting Files */,
+			);
+			path = "Log Viewer";
+			sourceTree = "<group>";
+		};
+		FC49DC9719CB81A2004E07EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DC9819CB81A2004E07EC /* Log Viewer-Info.plist */,
+				FC49DC9919CB81A2004E07EC /* InfoPlist.strings */,
+				FC49DC9C19CB81A2004E07EC /* main.m */,
+				FC49DC9E19CB81A2004E07EC /* Log Viewer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FC49DCB519CB81A2004E07EC /* Log ViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DCBB19CB81A2004E07EC /* Log_ViewerTests.m */,
+				FC49DCB619CB81A2004E07EC /* Supporting Files */,
+			);
+			path = "Log ViewerTests";
+			sourceTree = "<group>";
+		};
+		FC49DCB619CB81A2004E07EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC49DCB719CB81A2004E07EC /* Log ViewerTests-Info.plist */,
+				FC49DCB819CB81A2004E07EC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC49DC8C19CB81A1004E07EC /* Log Viewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC49DCBF19CB81A2004E07EC /* Build configuration list for PBXNativeTarget "Log Viewer" */;
+			buildPhases = (
+				FC49DC8919CB81A1004E07EC /* Sources */,
+				FC49DC8A19CB81A1004E07EC /* Frameworks */,
+				FC49DC8B19CB81A1004E07EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Log Viewer";
+			productName = "Log Viewer";
+			productReference = FC49DC8D19CB81A2004E07EC /* Log Viewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC49DCAD19CB81A2004E07EC /* Log ViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC49DCC219CB81A2004E07EC /* Build configuration list for PBXNativeTarget "Log ViewerTests" */;
+			buildPhases = (
+				FC49DCAA19CB81A2004E07EC /* Sources */,
+				FC49DCAB19CB81A2004E07EC /* Frameworks */,
+				FC49DCAC19CB81A2004E07EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC49DCB419CB81A2004E07EC /* PBXTargetDependency */,
+			);
+			name = "Log ViewerTests";
+			productName = "Log ViewerTests";
+			productReference = FC49DCAE19CB81A2004E07EC /* Log ViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC49DC8519CB81A1004E07EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LV;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Modeo;
+				TargetAttributes = {
+					FC49DCAD19CB81A2004E07EC = {
+						TestTargetID = FC49DC8C19CB81A1004E07EC;
+					};
+				};
+			};
+			buildConfigurationList = FC49DC8819CB81A1004E07EC /* Build configuration list for PBXProject "Log Viewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC49DC8419CB81A1004E07EC;
+			productRefGroup = FC49DC8E19CB81A2004E07EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC49DC8C19CB81A1004E07EC /* Log Viewer */,
+				FC49DCAD19CB81A2004E07EC /* Log ViewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC49DC8B19CB81A1004E07EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DCA919CB81A2004E07EC /* Images.xcassets in Resources */,
+				FC49DC9B19CB81A2004E07EC /* InfoPlist.strings in Resources */,
+				FC49DCA419CB81A2004E07EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC49DCAC19CB81A2004E07EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DCBA19CB81A2004E07EC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC49DC8919CB81A1004E07EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DCA119CB81A2004E07EC /* LVAppDelegate.m in Sources */,
+				FC49DC9D19CB81A2004E07EC /* main.m in Sources */,
+				FC49DCA719CB81A2004E07EC /* LVViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC49DCAA19CB81A2004E07EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC49DCBC19CB81A2004E07EC /* Log_ViewerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC49DCB419CB81A2004E07EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC49DC8C19CB81A1004E07EC /* Log Viewer */;
+			targetProxy = FC49DCB319CB81A2004E07EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FC49DC9919CB81A2004E07EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC49DC9A19CB81A2004E07EC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FC49DCA219CB81A2004E07EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC49DCA319CB81A2004E07EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FC49DCB819CB81A2004E07EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC49DCB919CB81A2004E07EC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC49DCBD19CB81A2004E07EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		FC49DCBE19CB81A2004E07EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC49DCC019CB81A2004E07EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
+				INFOPLIST_FILE = "Log Viewer/Log Viewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FC49DCC119CB81A2004E07EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
+				INFOPLIST_FILE = "Log Viewer/Log Viewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FC49DCC319CB81A2004E07EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Log Viewer.app/Log Viewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Log ViewerTests/Log ViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FC49DCC419CB81A2004E07EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Log Viewer.app/Log Viewer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
+				INFOPLIST_FILE = "Log ViewerTests/Log ViewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC49DC8819CB81A1004E07EC /* Build configuration list for PBXProject "Log Viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC49DCBD19CB81A2004E07EC /* Debug */,
+				FC49DCBE19CB81A2004E07EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC49DCBF19CB81A2004E07EC /* Build configuration list for PBXNativeTarget "Log Viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC49DCC019CB81A2004E07EC /* Debug */,
+				FC49DCC119CB81A2004E07EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FC49DCC219CB81A2004E07EC /* Build configuration list for PBXNativeTarget "Log ViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC49DCC319CB81A2004E07EC /* Debug */,
+				FC49DCC419CB81A2004E07EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC49DC8519CB81A1004E07EC /* Project object */;
+}
