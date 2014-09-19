@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 Modeo. All rights reserved.
 //
 
-#import <Parse/Parse.h>
-
 #import "LVViewController.h"
 #import "MEDataPoint.h"
 
+#define MAP_EDGE_PADDING 0.001
 
 @interface LVViewController ()
 
@@ -18,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet LVGraphView *graphView;
 
 @property (strong, nonatomic) MKPolyline *routeLine;
-@property (nonatomic) MKMapRect routeRect;
 @property (strong, nonatomic) MKPolylineView *routeLineView;
 
 @property (strong, nonatomic) NSArray *locationData;
@@ -38,135 +36,128 @@
     
     self.graphView.delegate = self;
     
-    NSString *objectId = @"5RGTXu8pSr";
-    PFObject *rideLog = [PFObject objectWithClassName:@"ride"];
-    rideLog.objectId = objectId;
-    [rideLog refreshInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    PFFile *log = [self.ride objectForKey:@"log"];
+    [log getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            NSLog(@"loaded");
-            PFFile *log = [object objectForKey:@"log"];
-            [log getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    NSLog(@"Log loaded");
+            
+            NSError *error;
+            NSArray *dataPointDictionaries = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
+            NSMutableArray *dataPoints = [NSMutableArray new];
+            
+            for (NSDictionary *dictionary in dataPointDictionaries) {
+                MEDataPoint *dataPoint = [[MEDataPoint alloc] initWithDictionary:dictionary];
+                [dataPoints addObject:dataPoint];
+            }
+            
+            NSMutableArray *locationDatems = [NSMutableArray new];
+            NSMutableArray *altitudeData = [NSMutableArray new];
+            
+            NSMutableDictionary *sortedSensorData = [NSMutableDictionary new];
+            
+            for (MEDataPoint *dataPoint in dataPoints) {
+                if (dataPoint.type == kDataPointTypeSensor) {
                     
-                    NSError *error;
-                    NSArray *dataPointDictionaries = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                    MFSensorData *sensorData = (MFSensorData *)dataPoint.dataObject;
                     
-                    NSMutableArray *dataPoints = [NSMutableArray new];
-                    
-                    for (NSDictionary *dictionary in dataPointDictionaries) {
-                        MEDataPoint *dataPoint = [[MEDataPoint alloc] initWithDictionary:dictionary];
-                        [dataPoints addObject:dataPoint];
+                    NSMutableArray *dataForSensor = [sortedSensorData objectForKey:[NSNumber numberWithInteger:sensorData.sensor]];
+                    if (!dataForSensor) {
+                        dataForSensor = [NSMutableArray new];
+                        [sortedSensorData setObject:dataForSensor forKey:[NSNumber numberWithInteger:sensorData.sensor]];
                     }
                     
-                    NSMutableArray *locationDatems = [NSMutableArray new];
-                    NSMutableArray *altitudeData = [NSMutableArray new];
-                    
-                    NSMutableDictionary *sortedSensorData = [NSMutableDictionary new];
-                    
-                    for (MEDataPoint *dataPoint in dataPoints) {
-                        if (dataPoint.type == kDataPointTypeSensor) {
-                            
-                            MFSensorData *sensorData = (MFSensorData *)dataPoint.dataObject;
-                            
-                            NSMutableArray *dataForSensor = [sortedSensorData objectForKey:[NSNumber numberWithInteger:sensorData.sensor]];
-                            if (!dataForSensor) {
-                                dataForSensor = [NSMutableArray new];
-                                [sortedSensorData setObject:dataForSensor forKey:[NSNumber numberWithInteger:sensorData.sensor]];
-                            }
-                            
-                            [dataForSensor addObject:sensorData];
-                        }
-                        else if (dataPoint.type == kDataPointTypeLocation) {
-                            CLLocation *location = (CLLocation *)dataPoint.dataObject;
-                            [locationDatems addObject:location];
-                            
-                            LVDataPoint *altitudeDataPoint = [[LVDataPoint alloc] initWithX:[location.timestamp timeIntervalSince1970] andY:location.altitude];
-                            [altitudeData addObject:altitudeDataPoint];
-                        }
-                    }
-                    
-                    NSMutableArray *mutableDataSets = [NSMutableArray new];
-                    
-                    for (NSNumber *key in sortedSensorData) {
-                        
-                        NSMutableArray *sensorDatems = [sortedSensorData objectForKey:key];
-                        
-                        NSMutableArray *mutableSensorDataPoints = [NSMutableArray new];
-                        
-                        for (MFSensorData *sensorData in sensorDatems) {
-                            
-                            LVDataPoint *dataPoint = [[LVDataPoint alloc] initWithX:[sensorData.timestamp timeIntervalSince1970] andY:sensorData.value];
-                            [mutableSensorDataPoints addObject:dataPoint];
-                        }
-                        
-                        LVDataSet *sensorDataSet = [[LVDataSet alloc] initWithArray:mutableSensorDataPoints];
-                        MFSensorData *first = sensorDatems.firstObject;
-                        
-                        sensorDataSet.name = [NSString stringWithFormat:@"Sensor %d", first.sensor];
-                        sensorDataSet.color = [colors objectAtIndex:mutableDataSets.count];
-                        [mutableDataSets addObject:sensorDataSet];
-                    }
-                    
-                    LVDataSet *altitudeDataSet = [[LVDataSet alloc] initWithArray:altitudeData];
-                    altitudeDataSet.name = @"altitude";
-                    altitudeDataSet.color = [colors objectAtIndex:mutableDataSets.count];
-                    [mutableDataSets addObject:altitudeDataSet];
-                    
-                    self.dataSets = [[NSArray alloc] initWithArray:mutableDataSets];
-                    
-                    self.locationData = [[NSArray alloc] initWithArray:locationDatems];
-                    
-                    [self drawRouteOnMap];
-                    [self.graphView reload];
+                    [dataForSensor addObject:sensorData];
                 }
-                else {
-                    NSLog(@"Error loading file: %@", error.localizedDescription);
+                else if (dataPoint.type == kDataPointTypeLocation) {
+                    CLLocation *location = (CLLocation *)dataPoint.dataObject;
+                    [locationDatems addObject:location];
+                    
+                    LVDataPoint *altitudeDataPoint = [[LVDataPoint alloc] initWithX:[location.timestamp timeIntervalSince1970] andY:location.altitude];
+                    [altitudeData addObject:altitudeDataPoint];
                 }
-            }];
+            }
+            
+            NSMutableArray *mutableDataSets = [NSMutableArray new];
+            
+            for (NSNumber *key in sortedSensorData) {
+                
+                NSMutableArray *sensorDatems = [sortedSensorData objectForKey:key];
+                
+                NSMutableArray *mutableSensorDataPoints = [NSMutableArray new];
+                
+                for (MFSensorData *sensorData in sensorDatems) {
+                    
+                    LVDataPoint *dataPoint = [[LVDataPoint alloc] initWithX:[sensorData.timestamp timeIntervalSince1970] andY:sensorData.value];
+                    [mutableSensorDataPoints addObject:dataPoint];
+                }
+                
+                LVDataSet *sensorDataSet = [[LVDataSet alloc] initWithArray:mutableSensorDataPoints];
+                MFSensorData *first = sensorDatems.firstObject;
+                
+                sensorDataSet.name = [NSString stringWithFormat:@"Sensor %d", first.sensor];
+                sensorDataSet.color = [colors objectAtIndex:mutableDataSets.count];
+                [mutableDataSets addObject:sensorDataSet];
+            }
+            
+            LVDataSet *altitudeDataSet = [[LVDataSet alloc] initWithArray:altitudeData];
+            altitudeDataSet.name = @"altitude";
+            altitudeDataSet.color = [colors objectAtIndex:mutableDataSets.count];
+            [mutableDataSets addObject:altitudeDataSet];
+            
+            self.dataSets = [[NSArray alloc] initWithArray:mutableDataSets];
+            
+            self.locationData = [[NSArray alloc] initWithArray:locationDatems];
+            
+            [self drawRouteOnMap];
+            [self.graphView reload];
         }
         else {
-            NSLog(@"Error loading ride: %@", error.localizedDescription);
+            NSLog(@"Error loading file: %@", error.localizedDescription);
         }
     }];
 }
 
 - (void)drawRouteOnMap {
-    MKMapPoint northEast;
-    MKMapPoint southWest;
     
-    MKMapPoint *pointArr = malloc(sizeof(CLLocationCoordinate2D) * self.locationData.count);
+    float minLongitude = NSIntegerMax;
+    float maxLongitude = NSIntegerMin;
+    float minLatitude = NSIntegerMax;
+    float maxLatitude = NSIntegerMin;
+    
+    CLLocationCoordinate2D *pointArr = malloc(sizeof(CLLocationCoordinate2D) * self.locationData.count);
     
     for (int i = 0; i < self.locationData.count; i++) {
         CLLocation *location = [self.locationData objectAtIndex:i];
-        MKMapPoint point = MKMapPointForCoordinate(location.coordinate);
-        pointArr[i] = point;
+        pointArr[i] = location.coordinate;
         
-        if (i == 0) {
-            northEast = point;
-            southWest = point;
-        }
+        double latitude = location.coordinate.latitude;
+        double longitude = location.coordinate.longitude;
         
-        if (point.x > northEast.x) {
-            northEast.x = point.x;
-        }
-        
-        if(point.y > northEast.y) {
-            northEast.y = point.y;
-        }
-        
-        if (point.x < southWest.x) {
-            southWest.x = point.x;
-        }
-        
-        if (point.y < southWest.y) {
-            southWest.y = point.y;
-        }
+        minLongitude = MIN(minLongitude, longitude);
+        maxLongitude = MAX(maxLongitude, longitude);
+        minLatitude = MIN(minLatitude, latitude);
+        maxLatitude = MAX(maxLatitude, latitude);
     }
     
-    self.routeLine = [MKPolyline polylineWithPoints:pointArr count:self.locationData.count];
-    self.routeRect = MKMapRectMake(southWest.x, southWest.y, northEast.x, northEast.y);
+    float lattitudeDelta = maxLatitude - minLatitude;
+    float longitudeDelta = maxLongitude - minLongitude;
     
+    CLLocationCoordinate2D center;
+    MKCoordinateSpan span;
+    if (self.locationData.count == 1) {
+        CLLocation *location = self.locationData.firstObject;
+        center = location.coordinate;
+        span = MKCoordinateSpanMake(MAP_EDGE_PADDING, MAP_EDGE_PADDING);
+    }
+    else {
+        center = CLLocationCoordinate2DMake(lattitudeDelta / 2 + minLatitude, longitudeDelta / 2 + minLongitude);
+        span = MKCoordinateSpanMake(lattitudeDelta + MAP_EDGE_PADDING, longitudeDelta + MAP_EDGE_PADDING);
+    }
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+    [self.mapView setRegion:region animated:YES];
+    
+    self.routeLine = [MKPolyline polylineWithCoordinates:pointArr count:self.locationData.count];
     free(pointArr);
     
     [self.mapView addOverlay:self.routeLine];

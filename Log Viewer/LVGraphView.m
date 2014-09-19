@@ -42,11 +42,11 @@
         LVDataSet *dataSet = [self.delegate graphView:self dataSetForSetWithIndex:i];
         
         UIBezierPath *path = [UIBezierPath bezierPath];
+        CGPoint firstPointPercentagePosition = [dataSet percentagePositionForDataPoint:dataSet.first];
+        [path moveToPoint:CGPointMake(viewWidth * firstPointPercentagePosition.x, viewHeight - viewHeight * firstPointPercentagePosition.y)];
         
-        [path moveToPoint:dataSet.first.cgPoint];
-        
-        for (int i = 0; i < dataSet.count; i++) {
-            LVDataPoint *dataPoint = [dataSet dataPointAtIndex:i];
+        for (int j = 0; j < dataSet.count; j++) {
+            LVDataPoint *dataPoint = [dataSet dataPointAtIndex:j];
             CGPoint percentagePosition = [dataSet percentagePositionForDataPoint:dataPoint];
             
             CGPoint point = CGPointMake(viewWidth * percentagePosition.x, viewHeight - viewHeight * percentagePosition.y);

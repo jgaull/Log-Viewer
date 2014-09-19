@@ -10,10 +10,13 @@
 #import <ModeoFramework/ModeoFramework.h>
 #import <ModeoFramework/ModeoController.h>
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 
 #import "LVGraphView.h"
 
 @interface LVViewController : UIViewController <MKMapViewDelegate, LVGraphViewDelegate>
+
+@property (strong, nonatomic) PFObject *ride;
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay;
 
