@@ -21,9 +21,9 @@
 @property (nonatomic) MKMapRect routeRect;
 @property (strong, nonatomic) MKPolylineView *routeLineView;
 
-@property (strong, nonatomic) NSArray *sensorData;
 @property (strong, nonatomic) NSArray *locationData;
 @property (strong, nonatomic) LVDataSet *altitudeDataSet;
+@property (strong, nonatomic) NSArray *dataSets;
 
 @end
 
@@ -33,6 +33,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSArray *colors = @[[UIColor redColor], [UIColor blueColor], [UIColor greenColor], [UIColor grayColor], [UIColor blackColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor cyanColor], [UIColor magentaColor], [UIColor purpleColor]];
+    
     self.graphView.delegate = self;
     
     NSString *objectId = @"5RGTXu8pSr";
@@ -56,14 +59,23 @@
                         [dataPoints addObject:dataPoint];
                     }
                     
-                    NSMutableArray *sensorDatems = [NSMutableArray new];
                     NSMutableArray *locationDatems = [NSMutableArray new];
                     NSMutableArray *altitudeData = [NSMutableArray new];
+                    
+                    NSMutableDictionary *sortedSensorData = [NSMutableDictionary new];
+                    
                     for (MEDataPoint *dataPoint in dataPoints) {
                         if (dataPoint.type == kDataPointTypeSensor) {
                             
                             MFSensorData *sensorData = (MFSensorData *)dataPoint.dataObject;
-                            [sensorDatems addObject:sensorData];
+                            
+                            NSMutableArray *dataForSensor = [sortedSensorData objectForKey:[NSNumber numberWithInteger:sensorData.sensor]];
+                            if (!dataForSensor) {
+                                dataForSensor = [NSMutableArray new];
+                                [sortedSensorData setObject:dataForSensor forKey:[NSNumber numberWithInteger:sensorData.sensor]];
+                            }
+                            
+                            [dataForSensor addObject:sensorData];
                         }
                         else if (dataPoint.type == kDataPointTypeLocation) {
                             CLLocation *location = (CLLocation *)dataPoint.dataObject;
@@ -74,13 +86,36 @@
                         }
                     }
                     
-                    self.sensorData = [[NSArray alloc] initWithArray:sensorDatems];
-                    self.locationData = [[NSArray alloc] initWithArray:locationDatems];
+                    NSMutableArray *mutableDataSets = [NSMutableArray new];
+                    
+                    for (NSNumber *key in sortedSensorData) {
+                        
+                        NSMutableArray *sensorDatems = [sortedSensorData objectForKey:key];
+                        
+                        NSMutableArray *mutableSensorDataPoints = [NSMutableArray new];
+                        
+                        for (MFSensorData *sensorData in sensorDatems) {
+                            
+                            LVDataPoint *dataPoint = [[LVDataPoint alloc] initWithX:[sensorData.timestamp timeIntervalSince1970] andY:sensorData.value];
+                            [mutableSensorDataPoints addObject:dataPoint];
+                        }
+                        
+                        LVDataSet *sensorDataSet = [[LVDataSet alloc] initWithArray:mutableSensorDataPoints];
+                        MFSensorData *first = sensorDatems.firstObject;
+                        
+                        sensorDataSet.name = [NSString stringWithFormat:@"Sensor %d", first.sensor];
+                        sensorDataSet.color = [colors objectAtIndex:mutableDataSets.count];
+                        [mutableDataSets addObject:sensorDataSet];
+                    }
                     
                     LVDataSet *altitudeDataSet = [[LVDataSet alloc] initWithArray:altitudeData];
-                    altitudeDataSet.color = [UIColor redColor];
-                    altitudeDataSet.name = @"Altitude";
-                    self.altitudeDataSet = altitudeDataSet;
+                    altitudeDataSet.name = @"altitude";
+                    altitudeDataSet.color = [colors objectAtIndex:mutableDataSets.count];
+                    [mutableDataSets addObject:altitudeDataSet];
+                    
+                    self.dataSets = [[NSArray alloc] initWithArray:mutableDataSets];
+                    
+                    self.locationData = [[NSArray alloc] initWithArray:locationDatems];
                     
                     [self drawRouteOnMap];
                     [self.graphView reload];
@@ -150,28 +185,11 @@
 }
 
 - (NSUInteger)numDataSetsForGraphView:(LVGraphView *)graphView {
-    return 1;
+    return self.dataSets.count;
 }
 
 - (LVDataSet *)graphView:(LVGraphView *)graphView dataSetForSetWithIndex:(NSUInteger)index {
-    
-    NSMutableArray *datems = [NSMutableArray new];
-    
-    MFSensorData *first = self.sensorData.firstObject;
-    NSDate *startTimestamp = first.timestamp;
-    
-    for (MFSensorData *sensorData in self.sensorData) {
-        
-        double x = [sensorData.timestamp timeIntervalSinceDate:startTimestamp];
-        double y = sensorData.value;
-        
-        LVDataPoint *dataPoint = [[LVDataPoint alloc] initWithX:x andY:y];
-        [datems addObject:dataPoint];
-    }
-    
-    LVDataSet *dataSet = [[LVDataSet alloc] initWithArray:datems];
-    dataSet.color = [UIColor redColor];
-    return self.altitudeDataSet;
+    return [self.dataSets objectAtIndex:index];
 }
 
 - (void)didReceiveMemoryWarning

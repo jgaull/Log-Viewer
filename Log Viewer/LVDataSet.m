@@ -59,6 +59,11 @@
     return CGPointMake(xPercent, yPercent);
 }
 
+- (void)addDataPoint:(LVDataPoint *)dataPoint {
+    NSMutableArray *mutableData = [[NSMutableArray alloc] initWithArray:self.data];
+    [mutableData addObject:dataPoint];
+}
+
 - (double)width {
     return self.bottomRight.x - self.topLeft.x;
 }
