@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC228CBE19CB940D00096F42 /* libModeoFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC228CB819CB934300096F42 /* libModeoFramework.a */; };
+		FC228CC319CBACAA00096F42 /* LVGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC228CC219CBACAA00096F42 /* LVGraphView.m */; };
+		FC228CC919CBADC700096F42 /* LVDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC228CC819CBADC700096F42 /* LVDataSet.m */; };
+		FC228CCD19CBB45500096F42 /* LVDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FC228CCC19CBB45500096F42 /* LVDataPoint.m */; };
 		FC49DC9119CB81A2004E07EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9019CB81A2004E07EC /* Foundation.framework */; };
 		FC49DC9319CB81A2004E07EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */; };
 		FC49DC9519CB81A2004E07EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9419CB81A2004E07EC /* UIKit.framework */; };
@@ -21,9 +25,34 @@
 		FC49DCB219CB81A2004E07EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DC9419CB81A2004E07EC /* UIKit.framework */; };
 		FC49DCBA19CB81A2004E07EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC49DCB819CB81A2004E07EC /* InfoPlist.strings */; };
 		FC49DCBC19CB81A2004E07EC /* Log_ViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCBB19CB81A2004E07EC /* Log_ViewerTests.m */; };
+		FC49DCC619CB8359004E07EC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCC519CB8359004E07EC /* Parse.framework */; };
+		FC49DCC819CB8584004E07EC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCC719CB8584004E07EC /* AudioToolbox.framework */; };
+		FC49DCCA19CB858B004E07EC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCC919CB858B004E07EC /* CFNetwork.framework */; };
+		FC49DCCC19CB859C004E07EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCCB19CB859C004E07EC /* CoreLocation.framework */; };
+		FC49DCCE19CB85A5004E07EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCCD19CB85A5004E07EC /* libz.dylib */; };
+		FC49DCD019CB85AC004E07EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCCF19CB85AC004E07EC /* MobileCoreServices.framework */; };
+		FC49DCD219CB85B8004E07EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD119CB85B8004E07EC /* QuartzCore.framework */; };
+		FC49DCD419CB85C0004E07EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD319CB85C0004E07EC /* Security.framework */; };
+		FC49DCD619CB85CF004E07EC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD519CB85CF004E07EC /* StoreKit.framework */; };
+		FC49DCD819CB85D8004E07EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD719CB85D8004E07EC /* SystemConfiguration.framework */; };
+		FC49DCDC19CB9218004E07EC /* MEDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCDB19CB9218004E07EC /* MEDataPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC228CB719CB934300096F42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC228CB219CB934300096F42 /* ModeoFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FCE4AA2418A49643007817C9;
+			remoteInfo = ModeoFramework;
+		};
+		FC228CB919CB934300096F42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC228CB219CB934300096F42 /* ModeoFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FCE4AA3418A49643007817C9;
+			remoteInfo = ModeoFrameworkTests;
+		};
 		FC49DCB319CB81A2004E07EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC49DC8519CB81A1004E07EC /* Project object */;
@@ -34,6 +63,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC228CB219CB934300096F42 /* ModeoFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ModeoFramework.xcodeproj; path = ../ModeoFramework/ModeoFramework.xcodeproj; sourceTree = "<group>"; };
+		FC228CC119CBACAA00096F42 /* LVGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVGraphView.h; sourceTree = "<group>"; };
+		FC228CC219CBACAA00096F42 /* LVGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVGraphView.m; sourceTree = "<group>"; };
+		FC228CC719CBADC700096F42 /* LVDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDataSet.h; sourceTree = "<group>"; };
+		FC228CC819CBADC700096F42 /* LVDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDataSet.m; sourceTree = "<group>"; };
+		FC228CCB19CBB45500096F42 /* LVDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDataPoint.h; sourceTree = "<group>"; };
+		FC228CCC19CBB45500096F42 /* LVDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDataPoint.m; sourceTree = "<group>"; };
 		FC49DC8D19CB81A2004E07EC /* Log Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Log Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC49DC9019CB81A2004E07EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +89,18 @@
 		FC49DCB719CB81A2004E07EC /* Log ViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Log ViewerTests-Info.plist"; sourceTree = "<group>"; };
 		FC49DCB919CB81A2004E07EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FC49DCBB19CB81A2004E07EC /* Log_ViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Log_ViewerTests.m; sourceTree = "<group>"; };
+		FC49DCC519CB8359004E07EC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FC49DCC719CB8584004E07EC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FC49DCC919CB858B004E07EC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FC49DCCB19CB859C004E07EC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FC49DCCD19CB85A5004E07EC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FC49DCCF19CB85AC004E07EC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FC49DCD119CB85B8004E07EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC49DCD319CB85C0004E07EC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FC49DCD519CB85CF004E07EC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FC49DCD719CB85D8004E07EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FC49DCDA19CB9218004E07EC /* MEDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEDataPoint.h; path = ../../Mess/MEDataPoint.h; sourceTree = "<group>"; };
+		FC49DCDB19CB9218004E07EC /* MEDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDataPoint.m; path = ../../Mess/MEDataPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +108,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC228CBE19CB940D00096F42 /* libModeoFramework.a in Frameworks */,
+				FC49DCD819CB85D8004E07EC /* SystemConfiguration.framework in Frameworks */,
+				FC49DCD619CB85CF004E07EC /* StoreKit.framework in Frameworks */,
+				FC49DCD419CB85C0004E07EC /* Security.framework in Frameworks */,
+				FC49DCD219CB85B8004E07EC /* QuartzCore.framework in Frameworks */,
+				FC49DCD019CB85AC004E07EC /* MobileCoreServices.framework in Frameworks */,
+				FC49DCCE19CB85A5004E07EC /* libz.dylib in Frameworks */,
+				FC49DCCC19CB859C004E07EC /* CoreLocation.framework in Frameworks */,
 				FC49DC9319CB81A2004E07EC /* CoreGraphics.framework in Frameworks */,
+				FC49DCCA19CB858B004E07EC /* CFNetwork.framework in Frameworks */,
+				FC49DCC819CB8584004E07EC /* AudioToolbox.framework in Frameworks */,
 				FC49DC9519CB81A2004E07EC /* UIKit.framework in Frameworks */,
+				FC49DCC619CB8359004E07EC /* Parse.framework in Frameworks */,
 				FC49DC9119CB81A2004E07EC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC228CB319CB934300096F42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC228CB819CB934300096F42 /* libModeoFramework.a */,
+				FC228CBA19CB934300096F42 /* ModeoFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC49DC8419CB81A1004E07EC = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +169,17 @@
 		FC49DC8F19CB81A2004E07EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC228CB219CB934300096F42 /* ModeoFramework.xcodeproj */,
+				FC49DCD719CB85D8004E07EC /* SystemConfiguration.framework */,
+				FC49DCD519CB85CF004E07EC /* StoreKit.framework */,
+				FC49DCD319CB85C0004E07EC /* Security.framework */,
+				FC49DCD119CB85B8004E07EC /* QuartzCore.framework */,
+				FC49DCCF19CB85AC004E07EC /* MobileCoreServices.framework */,
+				FC49DCCD19CB85A5004E07EC /* libz.dylib */,
+				FC49DCCB19CB859C004E07EC /* CoreLocation.framework */,
+				FC49DCC919CB858B004E07EC /* CFNetwork.framework */,
+				FC49DCC719CB8584004E07EC /* AudioToolbox.framework */,
+				FC49DCC519CB8359004E07EC /* Parse.framework */,
 				FC49DC9019CB81A2004E07EC /* Foundation.framework */,
 				FC49DC9219CB81A2004E07EC /* CoreGraphics.framework */,
 				FC49DC9419CB81A2004E07EC /* UIKit.framework */,
@@ -112,6 +191,8 @@
 		FC49DC9619CB81A2004E07EC /* Log Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				FC49DCDA19CB9218004E07EC /* MEDataPoint.h */,
+				FC49DCDB19CB9218004E07EC /* MEDataPoint.m */,
 				FC49DC9F19CB81A2004E07EC /* LVAppDelegate.h */,
 				FC49DCA019CB81A2004E07EC /* LVAppDelegate.m */,
 				FC49DCA219CB81A2004E07EC /* Main.storyboard */,
@@ -119,6 +200,12 @@
 				FC49DCA619CB81A2004E07EC /* LVViewController.m */,
 				FC49DCA819CB81A2004E07EC /* Images.xcassets */,
 				FC49DC9719CB81A2004E07EC /* Supporting Files */,
+				FC228CC119CBACAA00096F42 /* LVGraphView.h */,
+				FC228CC219CBACAA00096F42 /* LVGraphView.m */,
+				FC228CC719CBADC700096F42 /* LVDataSet.h */,
+				FC228CC819CBADC700096F42 /* LVDataSet.m */,
+				FC228CCB19CBB45500096F42 /* LVDataPoint.h */,
+				FC228CCC19CBB45500096F42 /* LVDataPoint.m */,
 			);
 			path = "Log Viewer";
 			sourceTree = "<group>";
@@ -216,6 +303,12 @@
 			mainGroup = FC49DC8419CB81A1004E07EC;
 			productRefGroup = FC49DC8E19CB81A2004E07EC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC228CB319CB934300096F42 /* Products */;
+					ProjectRef = FC228CB219CB934300096F42 /* ModeoFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FC49DC8C19CB81A1004E07EC /* Log Viewer */,
@@ -223,6 +316,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC228CB819CB934300096F42 /* libModeoFramework.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libModeoFramework.a;
+			remoteRef = FC228CB719CB934300096F42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC228CBA19CB934300096F42 /* ModeoFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ModeoFrameworkTests.xctest;
+			remoteRef = FC228CB919CB934300096F42 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FC49DC8B19CB81A1004E07EC /* Resources */ = {
@@ -251,7 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC49DCA119CB81A2004E07EC /* LVAppDelegate.m in Sources */,
+				FC228CCD19CBB45500096F42 /* LVDataPoint.m in Sources */,
 				FC49DC9D19CB81A2004E07EC /* main.m in Sources */,
+				FC228CC919CBADC700096F42 /* LVDataSet.m in Sources */,
+				FC228CC319CBACAA00096F42 /* LVGraphView.m in Sources */,
+				FC49DCDC19CB9218004E07EC /* MEDataPoint.m in Sources */,
 				FC49DCA719CB81A2004E07EC /* LVViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,9 +493,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
 				INFOPLIST_FILE = "Log Viewer/Log Viewer-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,9 +511,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Log Viewer/Log Viewer-Prefix.pch";
 				INFOPLIST_FILE = "Log Viewer/Log Viewer-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,6 +583,7 @@
 				FC49DCC119CB81A2004E07EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC49DCC219CB81A2004E07EC /* Build configuration list for PBXNativeTarget "Log ViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +592,7 @@
 				FC49DCC419CB81A2004E07EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

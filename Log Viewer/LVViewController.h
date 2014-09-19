@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ModeoFramework/ModeoFramework.h>
+#import <ModeoFramework/ModeoController.h>
+#import <MapKit/MapKit.h>
 
-@interface LVViewController : UIViewController
+#import "LVGraphView.h"
+
+@interface LVViewController : UIViewController <MKMapViewDelegate, LVGraphViewDelegate>
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay;
+
+- (NSUInteger)numDataSetsForGraphView:(LVGraphView *)graphView;
+- (LVDataSet *)graphView:(LVGraphView *)graphView dataSetForSetWithIndex:(NSUInteger)index;
 
 @end

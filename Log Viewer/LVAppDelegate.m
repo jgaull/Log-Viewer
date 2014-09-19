@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Modeo. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "LVAppDelegate.h"
 
 @implementation LVAppDelegate
@@ -13,6 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"HSzaGkx6B3kF7Ow3J7utNijE7MrxGIeClkA0Drs8"
+                  clientKey:@"5b1MR4op6iP40MFl1ZjKTp4mhV1wDwPI3YaRjgCv"];
+    
     return YES;
 }
 							
