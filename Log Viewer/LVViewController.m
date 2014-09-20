@@ -8,6 +8,7 @@
 
 #import "LVViewController.h"
 #import "MEDataPoint.h"
+#import "LVDataSetSettingsTableViewController.h"
 
 #define MAP_EDGE_PADDING 0.001
 
@@ -117,6 +118,11 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.graphView reload];
+}
+
 - (void)drawRouteOnMap {
     
     float minLongitude = NSIntegerMax;
@@ -187,6 +193,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[LVDataSetSettingsTableViewController class]]) {
+        LVDataSetSettingsTableViewController *viewController = (LVDataSetSettingsTableViewController *)segue.destinationViewController;
+        viewController.dataSets = self.dataSets;
+    }
 }
 
 @end

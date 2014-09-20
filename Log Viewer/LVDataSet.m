@@ -11,6 +11,7 @@
 @interface LVDataSet ()
 
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *smoothedData;
 
 @end
 
@@ -45,6 +46,10 @@
 }
 
 - (LVDataPoint *)dataPointAtIndex:(NSInteger)index {
+    if (self.smoothedData) {
+        return [self.smoothedData objectAtIndex:index];
+    }
+    
     return [self.data objectAtIndex:index];
 }
 
@@ -59,9 +64,28 @@
     return CGPointMake(xPercent, yPercent);
 }
 
-- (void)addDataPoint:(LVDataPoint *)dataPoint {
-    NSMutableArray *mutableData = [[NSMutableArray alloc] initWithArray:self.data];
-    [mutableData addObject:dataPoint];
+- (void)setSmoothing:(float)smoothing {
+    _smoothing = smoothing;
+    
+    LVDataPoint *firstDataPoint = self.first;
+    float value = firstDataPoint.y;
+    
+    NSMutableArray *smoothedDataPoints = [NSMutableArray new];
+    
+    for (LVDataPoint *dataPoint in self.data) {
+        value = [self smoothNewValue:dataPoint.y withPreviousValue:value andSmoothingAmount:smoothing];
+        LVDataPoint *smoothedDataPoint = [[LVDataPoint alloc] initWithX:dataPoint.x andY:value];
+        [smoothedDataPoints addObject:smoothedDataPoint];
+    }
+    
+    _smoothedData = [[NSArray alloc] initWithArray:smoothedDataPoints];
+}
+
+- (float)smoothNewValue:(float)newValue withPreviousValue:(float)previousValue andSmoothingAmount:(float)smoothing {
+    smoothing = MIN(smoothing, 1);
+    smoothing = MAX(smoothing, 0);
+    
+    return previousValue * smoothing + newValue * (1 - smoothing);
 }
 
 - (double)width {

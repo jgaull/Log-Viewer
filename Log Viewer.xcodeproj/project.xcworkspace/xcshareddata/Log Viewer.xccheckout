@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90DC827D-9229-488E-934E-4EE5D32AAD82</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Log Viewer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>15A61971-6E31-4BAC-B986-6C2903D6EB13</key>
+		<string>https://github.com/jgaull/Log-Viewer.git</string>
+		<key>51118BE1-C521-4404-8A89-D82454ECBC19</key>
+		<string>https://github.com/jgaull/ModeoFramework.git</string>
+		<key>EE17479B-21C7-4438-BAEC-22069649C175</key>
+		<string>https://github.com/jgaull/Mess.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Log Viewer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>15A61971-6E31-4BAC-B986-6C2903D6EB13</key>
+		<string>../..</string>
+		<key>51118BE1-C521-4404-8A89-D82454ECBC19</key>
+		<string>../../../ModeoFramework</string>
+		<key>EE17479B-21C7-4438-BAEC-22069649C175</key>
+		<string>../../../Mess</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jgaull/Log-Viewer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>15A61971-6E31-4BAC-B986-6C2903D6EB13</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>15A61971-6E31-4BAC-B986-6C2903D6EB13</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Log Viewer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE17479B-21C7-4438-BAEC-22069649C175</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mess</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>51118BE1-C521-4404-8A89-D82454ECBC19</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ModeoFramework</string>
+		</dict>
+	</array>
+</dict>
+</plist>

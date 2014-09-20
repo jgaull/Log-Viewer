@@ -71,14 +71,20 @@
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yjj-Bm-aII" customClass="LVGraphView">
-                                <rect key="frame" x="0.0" y="524" width="768" height="500"/>
+                                <rect key="frame" x="0.0" y="524" width="768" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZDv-lb-tC5"/>
+                    <navigationItem key="navigationItem" id="ZDv-lb-tC5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="fxR-pk-yG3">
+                            <connections>
+                                <segue destination="dFV-Ww-jdw" kind="push" id="Dw5-vo-A2D"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="graphView" destination="Yjj-Bm-aII" id="Z5q-2V-fGD"/>
                         <outlet property="mapView" destination="CdS-F7-Mk0" id="F57-jx-n13"/>
@@ -87,6 +93,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="-447"/>
+        </scene>
+        <!--Data Set Settings Table View Controller-->
+        <scene sceneID="gey-hY-JDB">
+            <objects>
+                <tableViewController id="dFV-Ww-jdw" customClass="LVDataSetSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="W5j-rY-ehc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TIM-Sv-lUU">
+                                <rect key="frame" x="0.0" y="86" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TIM-Sv-lUU" id="pof-kR-AOR">
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Epy-xF-CSU" kind="push" id="Upw-kf-X6a"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dFV-Ww-jdw" id="o0M-H5-hLD"/>
+                            <outlet property="delegate" destination="dFV-Ww-jdw" id="gSa-K2-mkz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="hEz-In-JBI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rE2-mO-UlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911" y="-447"/>
+        </scene>
+        <!--Data Set Settings View Controller-->
+        <scene sceneID="sTy-bn-T8F">
+            <objects>
+                <viewController id="Epy-xF-CSU" customClass="LVDataSetSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iCR-Bx-trG"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ai-gz-CRl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LxC-Cu-POk">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15f-Sy-mso" customClass="LVGraphView">
+                                <rect key="frame" x="0.0" y="513" width="768" height="491"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7wJ-Bs-5Pm">
+                                <rect key="frame" x="18" y="83" width="732" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="smoothingSliderDidChange:" destination="Epy-xF-CSU" eventType="valueChanged" id="XhP-6D-QNo"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Smoothing 0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37c-Zx-pZv">
+                                <rect key="frame" x="252" y="121" width="264" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WSB-bq-IBm"/>
+                    <connections>
+                        <outlet property="graphView" destination="15f-Sy-mso" id="olp-9R-HXz"/>
+                        <outlet property="smoothingLabel" destination="37c-Zx-pZv" id="fIO-oO-vE1"/>
+                        <outlet property="smoothingSlider" destination="7wJ-Bs-5Pm" id="hpK-E7-bgT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82d-0L-Voa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="-447"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

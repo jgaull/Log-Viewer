@@ -37,6 +37,8 @@
 		FC49DCD619CB85CF004E07EC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD519CB85CF004E07EC /* StoreKit.framework */; };
 		FC49DCD819CB85D8004E07EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC49DCD719CB85D8004E07EC /* SystemConfiguration.framework */; };
 		FC49DCDC19CB9218004E07EC /* MEDataPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FC49DCDB19CB9218004E07EC /* MEDataPoint.m */; };
+		FC9C8CD319CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9C8CD219CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.m */; };
+		FC9C8CD819CD00A200CF45EB /* LVDataSetSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9C8CD719CD00A200CF45EB /* LVDataSetSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,10 @@
 		FC49DCD719CB85D8004E07EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FC49DCDA19CB9218004E07EC /* MEDataPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MEDataPoint.h; path = ../../Mess/MEDataPoint.h; sourceTree = "<group>"; };
 		FC49DCDB19CB9218004E07EC /* MEDataPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MEDataPoint.m; path = ../../Mess/MEDataPoint.m; sourceTree = "<group>"; };
+		FC9C8CD119CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDataSetSettingsTableViewController.h; sourceTree = "<group>"; };
+		FC9C8CD219CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDataSetSettingsTableViewController.m; sourceTree = "<group>"; };
+		FC9C8CD619CD00A200CF45EB /* LVDataSetSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVDataSetSettingsViewController.h; sourceTree = "<group>"; };
+		FC9C8CD719CD00A200CF45EB /* LVDataSetSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVDataSetSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,10 @@
 				FC228CCC19CBB45500096F42 /* LVDataPoint.m */,
 				FC228CD119CCD5B500096F42 /* LVRidesTableViewController.h */,
 				FC228CD219CCD5B500096F42 /* LVRidesTableViewController.m */,
+				FC9C8CD119CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.h */,
+				FC9C8CD219CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.m */,
+				FC9C8CD619CD00A200CF45EB /* LVDataSetSettingsViewController.h */,
+				FC9C8CD719CD00A200CF45EB /* LVDataSetSettingsViewController.m */,
 			);
 			path = "Log Viewer";
 			sourceTree = "<group>";
@@ -369,10 +379,12 @@
 				FC228CCD19CBB45500096F42 /* LVDataPoint.m in Sources */,
 				FC49DC9D19CB81A2004E07EC /* main.m in Sources */,
 				FC228CC919CBADC700096F42 /* LVDataSet.m in Sources */,
+				FC9C8CD819CD00A200CF45EB /* LVDataSetSettingsViewController.m in Sources */,
 				FC228CC319CBACAA00096F42 /* LVGraphView.m in Sources */,
 				FC49DCDC19CB9218004E07EC /* MEDataPoint.m in Sources */,
 				FC49DCA719CB81A2004E07EC /* LVViewController.m in Sources */,
 				FC228CD319CCD5B500096F42 /* LVRidesTableViewController.m in Sources */,
+				FC9C8CD319CCFE1F00CF45EB /* LVDataSetSettingsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

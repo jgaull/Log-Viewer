@@ -24,6 +24,7 @@
 @property (readonly) LVDataPoint *bottomRight;
 @property (readonly) double width;
 @property (readonly) double height;
+@property (nonatomic) float smoothing;
 
 @property (strong, nonatomic) UIColor *color;
 @property (strong, nonatomic) NSString *name;
