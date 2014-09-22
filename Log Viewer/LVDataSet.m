@@ -58,8 +58,16 @@
     double zeroedX = dataPoint.x - self.topLeft.x;
     double zeroedY = dataPoint.y - self.bottomRight.y;
     
-    float xPercent = zeroedX / self.width;
-    float yPercent = zeroedY / self.height;
+    float xPercent = 0;
+    float yPercent = 0;
+    
+    if (self.width != 0) {
+        xPercent = zeroedX / self.width;
+    }
+    
+    if (self.height != 0) {
+        yPercent = zeroedY / self.height;
+    }
     
     return CGPointMake(xPercent, yPercent);
 }

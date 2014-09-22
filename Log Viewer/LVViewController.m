@@ -125,48 +125,50 @@
 
 - (void)drawRouteOnMap {
     
-    float minLongitude = NSIntegerMax;
-    float maxLongitude = NSIntegerMin;
-    float minLatitude = NSIntegerMax;
-    float maxLatitude = NSIntegerMin;
-    
-    CLLocationCoordinate2D *pointArr = malloc(sizeof(CLLocationCoordinate2D) * self.locationData.count);
-    
-    for (int i = 0; i < self.locationData.count; i++) {
-        CLLocation *location = [self.locationData objectAtIndex:i];
-        pointArr[i] = location.coordinate;
+    if (self.locationData.count > 0) {
+        float minLongitude = NSIntegerMax;
+        float maxLongitude = NSIntegerMin;
+        float minLatitude = NSIntegerMax;
+        float maxLatitude = NSIntegerMin;
         
-        double latitude = location.coordinate.latitude;
-        double longitude = location.coordinate.longitude;
+        CLLocationCoordinate2D *pointArr = malloc(sizeof(CLLocationCoordinate2D) * self.locationData.count);
         
-        minLongitude = MIN(minLongitude, longitude);
-        maxLongitude = MAX(maxLongitude, longitude);
-        minLatitude = MIN(minLatitude, latitude);
-        maxLatitude = MAX(maxLatitude, latitude);
+        for (int i = 0; i < self.locationData.count; i++) {
+            CLLocation *location = [self.locationData objectAtIndex:i];
+            pointArr[i] = location.coordinate;
+            
+            double latitude = location.coordinate.latitude;
+            double longitude = location.coordinate.longitude;
+            
+            minLongitude = MIN(minLongitude, longitude);
+            maxLongitude = MAX(maxLongitude, longitude);
+            minLatitude = MIN(minLatitude, latitude);
+            maxLatitude = MAX(maxLatitude, latitude);
+        }
+        
+        float lattitudeDelta = maxLatitude - minLatitude;
+        float longitudeDelta = maxLongitude - minLongitude;
+        
+        CLLocationCoordinate2D center;
+        MKCoordinateSpan span;
+        if (self.locationData.count == 1) {
+            CLLocation *location = self.locationData.firstObject;
+            center = location.coordinate;
+            span = MKCoordinateSpanMake(MAP_EDGE_PADDING, MAP_EDGE_PADDING);
+        }
+        else {
+            center = CLLocationCoordinate2DMake(lattitudeDelta / 2 + minLatitude, longitudeDelta / 2 + minLongitude);
+            span = MKCoordinateSpanMake(lattitudeDelta + MAP_EDGE_PADDING, longitudeDelta + MAP_EDGE_PADDING);
+        }
+        
+        MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
+        [self.mapView setRegion:region animated:YES];
+        
+        self.routeLine = [MKPolyline polylineWithCoordinates:pointArr count:self.locationData.count];
+        free(pointArr);
+        
+        [self.mapView addOverlay:self.routeLine];
     }
-    
-    float lattitudeDelta = maxLatitude - minLatitude;
-    float longitudeDelta = maxLongitude - minLongitude;
-    
-    CLLocationCoordinate2D center;
-    MKCoordinateSpan span;
-    if (self.locationData.count == 1) {
-        CLLocation *location = self.locationData.firstObject;
-        center = location.coordinate;
-        span = MKCoordinateSpanMake(MAP_EDGE_PADDING, MAP_EDGE_PADDING);
-    }
-    else {
-        center = CLLocationCoordinate2DMake(lattitudeDelta / 2 + minLatitude, longitudeDelta / 2 + minLongitude);
-        span = MKCoordinateSpanMake(lattitudeDelta + MAP_EDGE_PADDING, longitudeDelta + MAP_EDGE_PADDING);
-    }
-    
-    MKCoordinateRegion region = MKCoordinateRegionMake(center, span);
-    [self.mapView setRegion:region animated:YES];
-    
-    self.routeLine = [MKPolyline polylineWithCoordinates:pointArr count:self.locationData.count];
-    free(pointArr);
-    
-    [self.mapView addOverlay:self.routeLine];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {

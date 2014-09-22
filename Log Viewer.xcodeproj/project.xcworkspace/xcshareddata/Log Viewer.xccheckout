@@ -12,28 +12,32 @@
 	<dict>
 		<key>15A61971-6E31-4BAC-B986-6C2903D6EB13</key>
 		<string>https://github.com/jgaull/Log-Viewer.git</string>
-		<key>51118BE1-C521-4404-8A89-D82454ECBC19</key>
-		<string>https://github.com/jgaull/ModeoFramework.git</string>
-		<key>EE17479B-21C7-4438-BAEC-22069649C175</key>
+		<key>47D1EF2627D41FF50F296B0A52145F7AB9EEFABC</key>
 		<string>https://github.com/jgaull/Mess.git</string>
+		<key>8AB9D42B0250CB6DBA35E9C6A8EFB9E8F7EEDBA5</key>
+		<string>https://github.com/jgaull/ModeoFramework.git</string>
+		<key>DADAFFDE09A712F89C4012A7FFC6F20A58150B61</key>
+		<string>https://github.com/jgaull/Log-Viewer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Log Viewer.xcodeproj/project.xcworkspace</string>
+	<string>Log Viewer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>15A61971-6E31-4BAC-B986-6C2903D6EB13</key>
-		<string>../..</string>
-		<key>51118BE1-C521-4404-8A89-D82454ECBC19</key>
-		<string>../../../ModeoFramework</string>
-		<key>EE17479B-21C7-4438-BAEC-22069649C175</key>
+		<string>../../../Log Viewer</string>
+		<key>47D1EF2627D41FF50F296B0A52145F7AB9EEFABC</key>
 		<string>../../../Mess</string>
+		<key>8AB9D42B0250CB6DBA35E9C6A8EFB9E8F7EEDBA5</key>
+		<string>../../../ModeoFramework</string>
+		<key>DADAFFDE09A712F89C4012A7FFC6F20A58150B61</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jgaull/Log-Viewer.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>15A61971-6E31-4BAC-B986-6C2903D6EB13</string>
+	<string>DADAFFDE09A712F89C4012A7FFC6F20A58150B61</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -48,7 +52,15 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EE17479B-21C7-4438-BAEC-22069649C175</string>
+			<string>DADAFFDE09A712F89C4012A7FFC6F20A58150B61</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Log%20Viewer</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47D1EF2627D41FF50F296B0A52145F7AB9EEFABC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Mess</string>
 		</dict>
@@ -56,7 +68,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>51118BE1-C521-4404-8A89-D82454ECBC19</string>
+			<string>8AB9D42B0250CB6DBA35E9C6A8EFB9E8F7EEDBA5</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ModeoFramework</string>
 		</dict>
